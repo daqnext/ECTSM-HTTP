@@ -4,7 +4,7 @@
 ### check time before communication
 ```
 before the communication the client must check server time 
-to make sure the local time is within +/- 15 seconds
+to make sure the local time is within +/- 15 seconds compared with server
 ```
 
 
@@ -12,8 +12,10 @@ to make sure the local time is within +/- 15 seconds
 
 #### 1.signature 
 ##### ``` signature : server-publickey(symmetric-key) and can be decoded from server side  ```
+##### ``` public-private-key using elliptic curve secp256k1 ```
 #### 2.encrypted content
 ##### ``` encrypted content:  symmetric-key(raw content) can be decoded from server side ```
+##### ``` AES (Advanced Encryption Standard) used for symmetric encryption/decryption ```
 #### 3.encrypted content header
 ##### 3.1 client side unix-time stamp in seconds [64 bits] '32bits is too small after year 2038 '
 ##### 3.2 message version definition 16 bytes [ascii string ]

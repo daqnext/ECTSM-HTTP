@@ -3,7 +3,7 @@
 ### 'elliptic curve & time security message protocol'
 ##### this is another secured communication protocal over http
 
-[!image](./concept.png)
+[!image](https://github.com/daqnext/ECTSM/blob/main/concept.png)
 
 
 ### server must provide 

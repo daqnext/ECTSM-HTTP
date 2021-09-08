@@ -21,7 +21,7 @@
 
 ### check time before communication
 ```
-before the communication the client must check server time ['/server_unixtime'] 
+before the communication the client must check server time  
 to make sure the local time is within +/- 15 seconds compared with server
 if not , please stop and adjust client side clock
 ```

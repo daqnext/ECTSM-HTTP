@@ -7,8 +7,16 @@
 
 
 ### server must provide 
-#### 1. http interface '/server_publickey'
-#### 2. http interface '/server_unixtime'
+ 
+```javascript
+//http api 
+'/etcminfo'
+//with the following json response
+{
+    servertime: server-unix-time-stamp-seconds
+    publickey: server's public key
+}
+```
 
 
 ### check time before communication
@@ -26,11 +34,11 @@ if not , please stop and adjust client side clock
 #### 2.encrypted-content
 ##### ``` encrypted content:  symmetric-key(raw content) can be decoded from server side ```
 ##### ``` AES (Advanced Encryption Standard) used for symmetric encryption/decryption ```
-#### 3.encrypted-content-header
-##### 3.1 client side unix-time stamp in seconds [64 bits] '32bits is too small after year 2038 '
-##### 3.2 message version definition 16 bytes [ascii string ]
-###### ``` message version like 'meson.1.3.2'  ```
-#### 4. encrypted-content-body 
+#### 3.encrypted-content-header encrypted by client's symmetric key
+##### 3.1 client side unix-time stamp in seconds  int64
+##### 3.2 client's user token [optional]
+
+#### 4. encrypted-content-body [optional]
 ###### ``` body is whatever you like ```
 
 
@@ -39,6 +47,11 @@ if not , please stop and adjust client side clock
 server should check 'client side unix-time' , this should be within +/- 30 seconds
 to prevent replay attack
 ```
+
+### server side user token check [optional]
+
+### server side optimization 
+####  server can cache a map of  [ signature => symmetric key ] to accelerate the decoding process
 
 
 

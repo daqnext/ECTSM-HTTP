@@ -3,7 +3,7 @@
 ### 'elliptic curve & time security message protocol'
 ##### this is another secured communication protocal over http
 
-![alt tag](https://github.com/daqnext/ECTSM/blob/main/concept_v1.0.0.png)
+![alt tag](https://github.com/daqnext/ECTSM/blob/main/concept_v1.0.1.png)
 
 
 ### server must provide 
@@ -28,8 +28,8 @@ if not , please stop and adjust client side clock
 
 ### message format:
 
-#### 1.signature 
-##### ``` signature : server-publickey(symmetric-key) and can be decoded from server side  ```
+#### 1.ecs-key 
+##### ``` ecs-key  : server-publickey(symmetric-key) and can be decoded from server side  ```
 ##### ``` public-private-key using elliptic curve secp256k1 ```
 #### 2.encrypted-content
 ##### ``` encrypted content:  symmetric-key(raw content) can be decoded from server side ```
